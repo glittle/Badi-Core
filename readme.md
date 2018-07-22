@@ -12,6 +12,8 @@ See this discussion https://github.com/dotnet/corefx/issues/30207 for more detai
 
 * Glen Little - @glittle
 
+Guidance, tips and feedback provided by @tarekgh, @terrajobst, @bchurchill, @janrg
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
