@@ -10,10 +10,11 @@ See this discussion https://github.com/dotnet/corefx/issues/30207 for more detai
 
 ## Authors and Contributors
 
-* Glen Little - @glittle
+* Glen Little - [@glittle](https://github.com/glittle)
 
-Guidance, tips and feedback provided by @tarekgh, @terrajobst, @bchurchill, @janrg
+Guidance, tips and feedback provided by [@tarekgh](https://github.com/tarekgh), [@terrajobst](https://github.com/terrajobst),
+ [@bchurchill](https://github.com/bchurchill), [@janrg](https://github.com/janrg)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
