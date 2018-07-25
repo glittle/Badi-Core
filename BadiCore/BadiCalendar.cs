@@ -4,13 +4,21 @@ namespace System.Globalization
 {
     public class BadiCalendar : Calendar
     {
-        public override CalendarAlgorithmType AlgorithmType => base.AlgorithmType;
+        const int BadiMonthsInYear = 19;
 
-        public override int[] Eras => throw new NotImplementedException();
+        internal static DateTime BadiEpochDayOne = new DateTime(1844, 3, 21);
 
-        public override DateTime MaxSupportedDateTime => base.MaxSupportedDateTime;
+        internal static int FirstYearInData = 2015;
+        internal static int YearsInData = 200; // to be adjusted
+        internal static byte[] YearData = Text.Encoding.Unicode.GetBytes("table to be created offline");
 
-        public override DateTime MinSupportedDateTime => base.MinSupportedDateTime;
+        public override CalendarAlgorithmType AlgorithmType => CalendarAlgorithmType.SolarCalendar;
+
+        public override int[] Eras => new[] { 1 };
+
+        public override DateTime MaxSupportedDateTime => new DateTime(FirstYearInData + YearsInData, 3, 20);
+
+        public override DateTime MinSupportedDateTime => BadiEpochDayOne;
 
         public override int TwoDigitYearMax { get => base.TwoDigitYearMax; set => base.TwoDigitYearMax = value; }
 
@@ -118,12 +126,12 @@ namespace System.Globalization
 
         public override int GetLeapMonth(int year)
         {
-            return base.GetLeapMonth(year);
+            return 0;
         }
 
         public override int GetLeapMonth(int year, int era)
         {
-            return base.GetLeapMonth(year, era);
+            return 0;
         }
 
         public override double GetMilliseconds(DateTime time)
@@ -143,12 +151,12 @@ namespace System.Globalization
 
         public override int GetMonthsInYear(int year)
         {
-            return base.GetMonthsInYear(year);
+            return BadiMonthsInYear;
         }
 
         public override int GetMonthsInYear(int year, int era)
         {
-            throw new NotImplementedException();
+            return BadiMonthsInYear;
         }
 
         public override int GetSecond(DateTime time)
@@ -163,7 +171,7 @@ namespace System.Globalization
 
         public override int GetYear(DateTime time)
         {
-            throw new NotImplementedException();
+            return time.Year - 1843;
         }
 
         public override bool IsLeapDay(int year, int month, int day)
@@ -178,12 +186,12 @@ namespace System.Globalization
 
         public override bool IsLeapMonth(int year, int month)
         {
-            return base.IsLeapMonth(year, month);
+            return month == 0;
         }
 
         public override bool IsLeapMonth(int year, int month, int era)
         {
-            throw new NotImplementedException();
+            return month == 0;
         }
 
         public override bool IsLeapYear(int year)
